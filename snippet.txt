@@ -1,0 +1,12 @@
+<model-viewer src="NEW gallery.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1" autoplay>
+    <button class="Hotspot" slot="hotspot-1" data-surface="3 0 102 174 150 0.246 0.237 0.517" data-visibility-attribute="visible"></button><button class="Hotspot" slot="hotspot-2" data-surface="12 0 150 126 102 0.385 0.241 0.374" data-visibility-attribute="visible"></button><button class="Hotspot" slot="hotspot-3" data-surface="11 0 150 126 102 0.416 0.012 0.573" data-visibility-attribute="visible"></button><button class="Hotspot" slot="hotspot-4" data-surface="10 0 150 126 102 0.450 0.095 0.456" data-visibility-attribute="visible"></button><button class="Hotspot" slot="hotspot-5" data-surface="9 0 150 126 102 0.311 0.013 0.676" data-visibility-attribute="visible"></button><button class="Hotspot" slot="hotspot-6" data-surface="4 0 146 170 98 0.236 0.072 0.692" data-visibility-attribute="visible"></button><button class="Hotspot" slot="hotspot-7" data-surface="5 0 146 170 98 0.478 0.022 0.501" data-visibility-attribute="visible"></button><button class="Hotspot" slot="hotspot-8" data-surface="6 0 98 122 146 0.660 0.018 0.323" data-visibility-attribute="visible"></button><button class="Hotspot" slot="hotspot-9" data-surface="7 0 146 170 98 0.547 0.073 0.380" data-visibility-attribute="visible"></button><button class="Hotspot" slot="hotspot-10" data-surface="8 0 98 122 146 0.585 0.346 0.069" data-visibility-attribute="visible"></button>
+    <div class="progress-bar hide" slot="progress-bar">
+        <div class="update-bar"></div>
+    </div>
+    <button slot="ar-button" id="ar-button">
+        View in your space
+    </button>
+    <div id="ar-prompt">
+        <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
+    </div>
+</model-viewer>
