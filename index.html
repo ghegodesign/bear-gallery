@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+  <title>Sensitron AR</title>
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  
+<script>
+  // Rileva se il sistema operativo è iOS e reindirizza
+  if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) {
+    window.location.href = "https://dosdesignopenspaces.staging.8thwall.app/portalear/";
+  }
+</script>
+  
+ <model-viewer src="PortaleAR.glb" ar ar-modes="webxr scene-viewer" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1" autoplay camera-orbit="4.123deg 85.82deg 19.86m" field-of-view="30deg">
+   <button class="Hotspot" slot="hotspot-1" data-surface="24 0 104 176 152 0.300 0.241 0.459" data-visibility-attribute="visible"></button>
+   <button class="Hotspot" slot="hotspot-2" data-surface="33 0 104 176 152 0.356 0.213 0.431" data-visibility-attribute="visible"></button>
+   <button class="Hotspot" slot="hotspot-3" data-surface="32 0 104 176 152 0.381 0.145 0.474" data-visibility-attribute="visible"></button>
+   <button class="Hotspot" slot="hotspot-4" data-surface="31 0 104 176 152 0.326 0.156 0.517" data-visibility-attribute="visible"></button>
+   <button class="Hotspot" slot="hotspot-5" data-surface="30 0 104 176 152 0.246 0.283 0.471" data-visibility-attribute="visible"></button>
+   <button class="Hotspot" slot="hotspot-6" data-surface="29 0 144 169 98 0.391 0.231 0.378" data-visibility-attribute="visible"></button>
+   <button class="Hotspot" slot="hotspot-8" data-surface="28 0 146 169 96 0.236 0.355 0.409" data-visibility-attribute="visible"></button>
+   <button class="Hotspot" slot="hotspot-9" data-surface="27 0 144 169 98 0.357 0.189 0.454" data-visibility-attribute="visible"></button>
+   <button class="Hotspot" slot="hotspot-10" data-surface="26 0 146 169 96 0.371 0.225 0.403" data-visibility-attribute="visible"></button>
+   <button class="Hotspot" slot="hotspot-11" data-surface="25 0 144 169 98 0.472 0.014 0.515" data-visibility-attribute="visible"></button>
+    <div class="progress-bar hide" slot="progress-bar">
+        <div class="update-bar"></div>
+    </div>
+    <button slot="ar-button" id="ar-button">
+        View in your space
+    </button>
+    <div id="ar-prompt">
+        <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
+    </div>
+   <div id="banner" style="display: none;">
+  <div class="banner-content">
+    <h1>Origami - Levante</h1>
+    <p> Levante is an Italian design and engineering studio specializing in the development of carbon fiber panels and custom solar solutions. Blending Italian design with motorsport-inspired expertise in composite engineering, we create durable lightweight timeless panels that redefine solar innovation.</p>
+    <img src="close.png" alt="Chiudi" id="closeBanner">
+  </div>
+</div>
+</model-viewer>
+  
+  
+
+  <script> // Apertura e chiusura del banner
+  document.querySelectorAll('.Hotspot').forEach(hotspot => {
+    hotspot.addEventListener('click', function() {
+      document.getElementById('banner').style.display = 'flex';
+    });
+  });
+
+  document.getElementById('closeBanner').addEventListener('click', function() {
+    document.getElementById('banner').style.display = 'none';
+  });
+</script>
+  
+</body>
+</html>

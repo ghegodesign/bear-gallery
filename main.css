@@ -1,0 +1,209 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'DOS_Pixelcity';
+    src: url('DOS_Pixelcity-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'DOS_Pixelcity', sans-serif;
+    text-align: center;
+    color: white;
+}
+
+#banner {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background: rgba(24, 24, 155, 0.7); /* Blu con trasparenza */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+
+
+.banner-content {
+    text-align: center;
+    max-width: 90%;
+}
+
+h1 {
+    font-size: 7vw; 
+    margin-bottom: 4vh;
+    font-family: 'DOS_Pixelcity', sans-serif; /*PALMINO AGGIUNGI IL FONT*/
+    font: bold;
+}
+
+p {
+    font-size: 1.2vw; 
+    max-width: 80%;
+    margin: 0 auto 20px auto;
+    line-height: 1.5;
+    text-align: justify;
+    font-family: 'DOS_Pixelcity', sans-serif; /*PALMINO AGGIUNGI IL FONT*/
+}
+
+
+#closeBanner {
+    cursor: pointer;
+    display: block;
+    width: 3.5vw; /* Dimensione responsiva basata sulla larghezza dello schermo */
+    max-width: 50px; /* Limite massimo */
+    height: auto; /* Mantiene il rapporto originale */
+    
+    /* Posizionamento fisso nella parte bassa */
+    position: fixed;
+    bottom: 50px; /* Distanza dal fondo dello schermo */
+    left: 50%; /* Centra orizzontalmente */
+    transform: translateX(-50%); /* Corregge il centramento */
+}
+
+.logos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.logos img {
+    width: 10vw;
+    max-width: 120px;
+    height: auto;
+}
+
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 5vw;
+    }
+    p {
+        font-size: 3.5vw;
+    }
+    #closeBanner {
+        width: 8vw; 
+    }
+    .logos img {
+        width: 15vw;
+    }
+}
+
+:not(:defined) > * {
+      display: none;
+    }
+
+     html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+    
+    .Hotspot {
+      width: 30px;
+      height: 30px;
+      background-color: rgba(0, 0, 255, 0);
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    
+    model-viewer {
+      background-color: #fff;
+      overflow-x: hidden;
+      width: 100%;
+      height: 100vh;
+      object-fit: cover
+    }
+
+    #ar-button {
+      background-image: url(assets/ic_view_in_ar_new_googblue_48dp.png);
+      background-repeat: no-repeat;
+      background-size: 20px 20px;
+      background-position: 12px 50%;
+      background-color: #00d5ca;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      bottom: 132px;
+      padding: 0px 16px 0px 40px;
+      font-family: Roboto Regular, Helvetica Neue, sans-serif;
+      font-size: 14px;
+      color: #0000FF;
+      height: 36px;
+      line-height: 36px;
+      border-radius: 5px;
+      border: 1px solid #000000;
+    }
+
+    #ar-button:active {
+      background-color: #E8EAED;
+    }
+
+    #ar-button:focus {
+      outline: none;
+    }
+
+    #ar-button:focus-visible {
+      outline: 1px solid #4285f4;
+    }
+
+    @keyframes circle {
+      from {
+        transform: translateX(-50%) rotate(0deg) translateX(50px) rotate(0deg);
+      }
+      to {
+        transform: translateX(-50%) rotate(360deg) translateX(50px) rotate(-360deg);
+      }
+    }
+
+    @keyframes elongate {
+      from {
+        transform: translateX(100px);
+      }
+      to {
+        transform: translateX(-100px);
+      }
+    }
+
+    model-viewer > #ar-prompt {
+      position: absolute;
+      left: 50%;
+      bottom: 175px;
+      animation: elongate 2s infinite ease-in-out alternate;
+      display: none;
+    }
+
+    model-viewer[ar-status="session-started"] > #ar-prompt {
+      display: block;
+    }
+
+    model-viewer > #ar-prompt > img {
+      animation: circle 4s linear infinite;
+    }
+
+    model-viewer > #ar-failure {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 175px;
+      display: none;
+    }
+
+    model-viewer[ar-tracking="not-tracking"] > #ar-failure {
+      display: block;
+    }
