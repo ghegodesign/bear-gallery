@@ -1,23 +1,14 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>&lt;model-viewer&gt; AR Gallery</title>
+    <title>AR Gallery</title>
     <meta charset="utf-8">
-    <meta name="description" content="AR Gallery using &lt;model-viewer&gt;">
+    <meta name="description" content="AR Gallery using Model Viewer">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" href="styles.css" rel="stylesheet"/>
   </head>
   <body>
-    <model-viewer 
-      src="gallery.glb" 
-      ar 
-      ar-modes="webxr scene-viewer quick-look" 
-      camera-controls 
-      tone-mapping="neutral" 
-      poster="poster.webp" 
-      shadow-intensity="1" 
-      autoplay>
-      
+    <model-viewer src="NEW gallery.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1" autoplay>
       <!-- Hotspots -->
       <button class="Hotspot" slot="hotspot-1"></button>
       <button class="Hotspot" slot="hotspot-2"></button>
@@ -31,15 +22,13 @@
       <button class="Hotspot" slot="hotspot-10"></button>
       
       <div class="progress-bar hide" slot="progress-bar">
-        <div class="update-bar"></div>
+          <div class="update-bar"></div>
       </div>
-      
       <button slot="ar-button" id="ar-button">View in your space</button>
-      
       <div id="ar-prompt">
-        <img src="ar_hand_prompt.png">
+          <img src="ar_hand_prompt.png">
       </div>
-    </model-viewer>  
+    </model-viewer>
     
     <script src="script.js"></script>
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
